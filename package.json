@@ -10,7 +10,11 @@
   },
   "dependencies": {
     "@next/font": "13.4.4",
+    "@prisma/client": "^4.15.0",
+    "axios": "^1.4.0",
+    "mysql": "^2.18.1",
     "next": "13.4.4",
+    "prisma": "^4.15.0",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }

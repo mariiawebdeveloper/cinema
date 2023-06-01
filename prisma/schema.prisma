@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model booking {
+  booking_id   Int       @id
+  customer_id  Int
+  screening_id Int
+  num_tickets  Int
+  total_cost   Decimal   @db.Decimal(10, 2)
+  customer     customer  @relation(fields: [customer_id], references: [customer_id], onDelete: NoAction, onUpdate: NoAction, map: "booking_ibfk_1")
+  screening    screening @relation(fields: [screening_id], references: [screening_id], onDelete: NoAction, onUpdate: NoAction, map: "booking_ibfk_2")
+
+  @@index([customer_id], map: "customer_id")
+  @@index([screening_id], map: "screening_id")
+}
+
+model customer {
+  customer_id  Int       @id
+  name         String    @db.VarChar(255)
+  email        String    @db.VarChar(255)
+  phone_number String    @db.VarChar(20)
+  booking      booking[]
+}
+
+model movie {
+  movie_id     Int         @id
+  title        String      @db.VarChar(255)
+  release_year Int         @db.Int
+  genre        String      @db.VarChar(255)
+  director     String      @db.VarChar(255)
+  screening    screening[]
+}
+
+model screening {
+  screening_id Int       @id
+  movie_id     Int
+  start_time   DateTime  @db.DateTime(0)
+  theater_num  Int
+  booking      booking[]
+  movie        movie     @relation(fields: [movie_id], references: [movie_id], onDelete: NoAction, onUpdate: NoAction, map: "screening_ibfk_1")
+
+  @@index([movie_id], map: "movie_id")
+}
+
+model theater {
+  theater_num Int    @id
+  capacity    Int
+  location    String @db.VarChar(255)
+}
