@@ -5,6 +5,22 @@
     <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
+  <component name="DBNavigator.Project.DataExportManager">
+    <export-instructions>
+      <create-header value="true" />
+      <friendly-headers value="false" />
+      <quote-values-containing-separator value="true" />
+      <quote-all-values value="false" />
+      <value-separator value="" />
+      <file-name value="" />
+      <file-location value="" />
+      <scope value="GLOBAL" />
+      <destination value="FILE" />
+      <format value="EXCEL" />
+      <charset value="windows-1251" />
+      <charset value="windows-1251" />
+    </export-instructions>
+  </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
@@ -15,17 +31,21 @@
     <connection id="899c0b83-6732-44fb-b660-2e48037934d9">
       <console name="Connection" type="STANDARD" schema="mysql" session="Main" />
     </connection>
+    <connection id="38f0a409-de53-4860-a0d3-31da9067a868">
+      <console name="Connection 1" type="STANDARD" schema="cinema" session="Main" />
+    </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
     <last-used-providers />
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
-      <object connection-id="899c0b83-6732-44fb-b660-2e48037934d9" object-ref="schemas/cinema/tables/movie" />
+      <object connection-id="38f0a409-de53-4860-a0d3-31da9067a868" object-ref="schemas/cinema/tables/customer" />
+      <object connection-id="38f0a409-de53-4860-a0d3-31da9067a868" object-ref="schemas/cinema/tables/movie" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="899c0b83-6732-44fb-b660-2e48037934d9" dataset="cinema.booking" active-filter-id="">
+    <filter-actions connection-id="899c0b83-6732-44fb-b660-2e48037934d9" dataset="cinema.booking" active-filter-id="EMPTY_FILTER">
       <filter id="6024896f-058e-48e0-b4c2-076528376b85" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="booking_id" operator="=" value="" active="true" />
       </filter>
@@ -35,11 +55,30 @@
         <condition column="movie_id" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
-    <filter-actions connection-id="899c0b83-6732-44fb-b660-2e48037934d9" dataset="cinema.customer" active-filter-id="">
+    <filter-actions connection-id="899c0b83-6732-44fb-b660-2e48037934d9" dataset="cinema.customer" active-filter-id="EMPTY_FILTER">
       <filter id="46d59a9c-dd34-48f8-aa8b-7328f42e16da" name="Filter 1" temporary="false" custom-name="false" type="basic" join-type="AND">
         <condition column="customer_id" operator="=" value="" active="true" />
       </filter>
     </filter-actions>
+    <filter-actions connection-id="899c0b83-6732-44fb-b660-2e48037934d9" dataset="cinema.screening" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="38f0a409-de53-4860-a0d3-31da9067a868" dataset="mysql.columns_priv" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="38f0a409-de53-4860-a0d3-31da9067a868" dataset="cinema._prisma_migrations" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="38f0a409-de53-4860-a0d3-31da9067a868" dataset="cinema.theater" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="38f0a409-de53-4860-a0d3-31da9067a868" dataset="cinema.booking" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="38f0a409-de53-4860-a0d3-31da9067a868" dataset="cinema.customer" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="38f0a409-de53-4860-a0d3-31da9067a868" dataset="cinema.movie" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="38f0a409-de53-4860-a0d3-31da9067a868" dataset="cinema.screening" active-filter-id="EMPTY_FILTER" />
+  </component>
+  <component name="DBNavigator.Project.ExecutionManager">
+    <retain-sticky-names value="false" />
+  </component>
+  <component name="DBNavigator.Project.MethodExecutionManager">
+    <method-browser />
+    <execution-history>
+      <group-entries value="true" />
+      <execution-inputs />
+    </execution-history>
+    <argument-values-cache />
   </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
@@ -60,6 +99,92 @@
           <url-type value="DATABASE" />
           <host value="localhost" />
           <port value="3306" />
+          <database value="mysql" />
+          <tns-folder value="" />
+          <tns-profile value="" />
+          <type value="USER_PASSWORD" />
+          <user value="root" />
+          <deprecated-pwd value="cm9vdA==" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <deprecated-proxy-pwd value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <ssl-settings>
+          <active value="false" />
+          <certificate-authority-file value="" />
+          <client-certificate-file value="" />
+          <client-key-file value="" />
+        </ssl-settings>
+        <details>
+          <charset value="UTF-8" />
+          <session-management value="true" />
+          <ddl-file-binding value="true" />
+          <database-logging value="true" />
+          <connect-automatically value="true" />
+          <restore-workspace value="true" />
+          <restore-workspace-deep value="false" />
+          <environment-type value="default" />
+          <connectivity-timeout value="30" />
+          <idle-time-to-disconnect value="30" />
+          <idle-time-to-disconnect-pool value="5" />
+          <credential-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+        </details>
+        <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
+          <object-type-filter>
+            <object-type name="SCHEMA" enabled="true" />
+            <object-type name="USER" enabled="true" />
+            <object-type name="ROLE" enabled="true" />
+            <object-type name="PRIVILEGE" enabled="true" />
+            <object-type name="CHARSET" enabled="true" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="true" />
+            <object-type name="MATERIALIZED_VIEW" enabled="true" />
+            <object-type name="NESTED_TABLE" enabled="true" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="DATASET_TRIGGER" enabled="true" />
+            <object-type name="DATABASE_TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="true" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="true" />
+            <object-type name="FUNCTION" enabled="true" />
+            <object-type name="PACKAGE" enabled="true" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+            <object-type name="ARGUMENT" enabled="true" />
+            <object-type name="DIMENSION" enabled="true" />
+            <object-type name="CLUSTER" enabled="true" />
+            <object-type name="DBLINK" enabled="true" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
+      <connection id="38f0a409-de53-4860-a0d3-31da9067a868" active="true" signed="true">
+        <database>
+          <name value="Connection 1" />
+          <description value="" />
+          <database-type value="MYSQL" />
+          <config-type value="BASIC" />
+          <database-version value="8.0" />
+          <driver-source value="BUNDLED" />
+          <driver-library value="" />
+          <driver value="" />
+          <url-type value="DATABASE" />
+          <host value="localhost" />
+          <port value="3307" />
           <database value="mysql" />
           <tns-folder value="" />
           <tns-profile value="" />
@@ -528,5 +653,8 @@
         </visibility-settings>
       </environment>
     </general-settings>
+  </component>
+  <component name="DBNavigator.Project.StatementExecutionManager">
+    <execution-variables />
   </component>
 </project>

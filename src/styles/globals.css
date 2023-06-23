@@ -105,3 +105,17 @@ a {
     color-scheme: dark;
   }
 }
+
+.navbar{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 10px;
+
+}
+
+.navbar-menu{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 30px;
+}

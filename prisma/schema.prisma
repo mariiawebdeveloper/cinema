@@ -25,6 +25,7 @@ model customer {
   name         String    @db.VarChar(255)
   email        String    @db.VarChar(255)
   phone_number String    @db.VarChar(20)
+  password     String    @db.VarChar(20)
   booking      booking[]
 }
 
