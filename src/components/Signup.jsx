@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 function Signup() {
@@ -8,13 +8,24 @@ function Signup() {
     const [phone, setPhone] = useState('');
 
     async function signUp(e) {
+        e.preventDefault();
 
-        e.preventDefault()
+        try {
+            const res = await axios({
+                url: '/api/signup',
+                method: "POST",
+                data: {
+                    userName,
+                    password,
+                    email,
+                    phone,
+                }
+            })
 
-        console.log(userName, password, email, phone)
-        const res = await axios.post('/api/signup', {userName, password, email, phone});
-        console.log(res.data);
-
+            console.log(res.data);
+        } catch (error) {
+            console.error(error);
+        }
     }
 
     return (
@@ -40,9 +51,7 @@ function Signup() {
                 onChange={(e) => setPhone(e.target.value)}
             />
 
-            <button onClick={signUp}>
-                Sign up
-            </button>
+            <button onClick={signUp}>Sign up</button>
         </div>
     );
 }
