@@ -36,12 +36,13 @@
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
-    <last-used-providers />
+    <last-used-providers>
+      <object-type object-type="TABLE" editor-provider="DATA" />
+    </last-used-providers>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files>
       <object connection-id="38f0a409-de53-4860-a0d3-31da9067a868" object-ref="schemas/cinema/tables/customer" />
-      <object connection-id="38f0a409-de53-4860-a0d3-31da9067a868" object-ref="schemas/cinema/tables/movie" />
     </open-files>
   </component>
   <component name="DBNavigator.Project.DatasetFilterManager">

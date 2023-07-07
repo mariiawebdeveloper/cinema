@@ -9,8 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.13.6",
     "@next/font": "13.4.4",
     "@prisma/client": "^4.15.0",
+    "argon2": "^0.30.3",
     "axios": "^1.4.0",
     "mysql": "^2.18.1",
     "next": "13.4.4",

@@ -8,10 +8,10 @@ datasource db {
 }
 
 model booking {
-  booking_id   Int       @id
-  customer_id  Int
-  screening_id Int
-  num_tickets  Int
+  booking_id   String    @id @default(cuid())
+  customer_id  String    @default(cuid())
+  screening_id String    @default(cuid())
+  num_tickets  String    @default(cuid())
   total_cost   Decimal   @db.Decimal(10, 2)
   customer     customer  @relation(fields: [customer_id], references: [customer_id], onDelete: NoAction, onUpdate: NoAction, map: "booking_ibfk_1")
   screening    screening @relation(fields: [screening_id], references: [screening_id], onDelete: NoAction, onUpdate: NoAction, map: "booking_ibfk_2")
@@ -21,16 +21,16 @@ model booking {
 }
 
 model customer {
-  customer_id  Int       @id
-  name         String    @db.VarChar(255)
-  email        String    @db.VarChar(255)
-  phone_number String    @db.VarChar(20)
-  password     String    @db.VarChar(20)
-  booking      booking[]
+  customer_id String    @id @default(cuid())
+  userName    String    @unique @db.VarChar(255)
+  password    String    @db.VarChar(20)
+  email       String    @db.VarChar(255)
+  phone       String    @db.VarChar(20)
+  booking     booking[]
 }
 
 model movie {
-  movie_id     Int         @id
+  movie_id     String      @id @default(cuid())
   title        String      @db.VarChar(255)
   release_year Int         @db.Int
   genre        String      @db.VarChar(255)
@@ -39,8 +39,8 @@ model movie {
 }
 
 model screening {
-  screening_id Int       @id
-  movie_id     Int
+  screening_id String    @id @default(cuid())
+  movie_id     String    @default(cuid())
   start_time   DateTime  @db.DateTime(0)
   theater_num  Int
   booking      booking[]
@@ -50,7 +50,7 @@ model screening {
 }
 
 model theater {
-  theater_num Int    @id
+  theater_num String @id @default(cuid())
   capacity    Int
   location    String @db.VarChar(255)
 }
